@@ -1,0 +1,437 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #315c4a;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #f2a900;
+  --color-on-primary-container: #171a17;
+  --color-primary-fixed: #ffdead;
+  --color-primary-fixed-dim: #ffba3b;
+  --color-on-primary-fixed: #281900;
+  --color-on-primary-fixed-variant: #315c4a;
+
+  --color-secondary: #315c4a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dce9df;
+  --color-on-secondary-container: #244a3a;
+  --color-secondary-fixed: #dce9df;
+  --color-secondary-fixed-dim: #b8d0bf;
+  --color-on-secondary-fixed: #171a17;
+  --color-on-secondary-fixed-variant: #315c4a;
+
+  --color-tertiary: #c83e3e;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #f9d7d2;
+  --color-on-tertiary-container: #8b2929;
+  --color-tertiary-fixed: #ffdad7;
+  --color-tertiary-fixed-dim: #ffb3ae;
+  --color-on-tertiary-fixed: #410004;
+  --color-on-tertiary-fixed-variant: #8b2929;
+
+  --color-error: #c83e3e;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffedeb;
+  --color-on-error-container: #8b2929;
+
+  --color-surface: #f7f4ea;
+  --color-on-surface: #171a17;
+  --color-surface-variant: #e8e2d4;
+  --color-on-surface-variant: #4a504b;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3efe4;
+  --color-surface-container: #e9e4d8;
+  --color-surface-container-high: #e2ddcf;
+  --color-surface-container-highest: #d9d3c5;
+  --color-surface-dim: #d9d3c5;
+  --color-surface-bright: #fffefa;
+
+  --color-outline: #77796f;
+  --color-outline-variant: #d9d3c5;
+  --color-inverse-surface: #171a17;
+  --color-inverse-on-surface: #f0f1ec;
+  --color-inverse-primary: #ffba3b;
+
+  --font-headline-xl: "Plus Jakarta Sans", sans-serif;
+  --font-headline-lg: "Plus Jakarta Sans", sans-serif;
+  --font-headline-md: "Plus Jakarta Sans", sans-serif;
+  --font-body-lg: "Plus Jakarta Sans", sans-serif;
+  --font-body-md: "Plus Jakarta Sans", sans-serif;
+  --font-body-sm: "Plus Jakarta Sans", sans-serif;
+  --font-label-caps: "Plus Jakarta Sans", sans-serif;
+  --font-code-badge: "JetBrains Mono", monospace;
+  --font-code-sla: "JetBrains Mono", monospace;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 0.875rem;
+  --spacing-space-lg: 1.25rem;
+  --spacing-space-xl: 2rem;
+  --spacing-gutter: 1rem;
+  --spacing-gutter-desktop: 1.5rem;
+  --spacing-margin: 1rem;
+  --spacing-margin-tablet: 1.5rem;
+  --spacing-margin-desktop: 2.5rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --civic-ivory: #f7f4ea;
+    --civic-white: #fffefa;
+    --civic-charcoal: #171a17;
+    --civic-green: #315c4a;
+    --civic-amber: #f2a900;
+    --civic-border: #d9d3c5;
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #171a17;
+    background-color: #f7f4ea;
+    overscroll-behavior: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid #315c4a;
+    outline-offset: 2px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .ticker-track {
+    animation: announce-slide 22s linear infinite;
+    will-change: transform;
+  }
+
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
+
+  .ticker-track:focus-within {
+    animation-play-state: paused;
+  }
+
+  .login-card-enter {
+    animation: login-card-enter 360ms ease-out both;
+  }
+
+  @keyframes login-card-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes announce-slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track {
+      animation: none;
+    }
+
+    .login-card-enter {
+      animation: none;
+    }
+  }
+}
+
+.admin-shell {
+  --color-primary: #315c4a;
+  --color-primary-container: #f2a900;
+  --color-on-primary-container: #171a17;
+  --color-secondary: #315c4a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dce9df;
+  --color-on-secondary-container: #244a3a;
+  --color-surface: #f7f4ea;
+  --color-surface-container-lowest: #fffefa;
+  --color-surface-container-low: #f3efe4;
+  --color-surface-container: #e9e4d8;
+  --color-surface-container-high: #e2ddcf;
+  --color-surface-container-highest: #d9d3c5;
+  --color-on-surface: #171a17;
+  --color-on-surface-variant: #4a504b;
+  min-height: 100vh;
+  background-color: #f7f4ea;
+  color: #171a17;
+}
+
+.admin-shell main {
+  background-color: #f7f4ea;
+}
+
+.admin-shell header {
+  border-color: #d9d3c5;
+}
+
+.admin-shell table thead {
+  background: #eee9dd;
+}
+
+.font-code-badge {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.font-code-sla {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+.font-label-caps {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.6875rem;
+  line-height: 0.875rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.login-page {
+  min-height: 100vh;
+  background: var(--civic-ivory);
+}
+
+.login-header {
+  min-height: 4.5rem;
+  padding-inline: max(1rem, calc((100vw - 82rem) / 2));
+  background: var(--civic-white);
+  box-shadow: 0 1px 0 rgb(23 26 23 / 7%);
+}
+
+.login-main {
+  background: var(--civic-ivory);
+}
+
+.login-layout {
+  display: grid;
+  width: min(100%, 76rem);
+  grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 4rem);
+  margin-inline: auto;
+}
+
+.login-visual {
+  position: relative;
+  display: flex;
+  min-height: 36rem;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid rgb(49 92 74 / 15%);
+  background-color: #dce9df;
+  background-image: linear-gradient(0deg, rgb(23 37 28 / 83%), rgb(23 37 28 / 0%) 68%), url("/images/karnataka-civic-building.svg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 12px 32px rgb(23 26 23 / 10%);
+}
+
+.login-visual__caption {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 36rem;
+  padding: clamp(1.5rem, 3.5vw, 3rem);
+  color: #fff;
+}
+
+.login-visual__caption > span {
+  width: fit-content;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgb(255 255 255 / 45%);
+  background: rgb(23 26 23 / 22%);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.login-visual__caption strong {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.login-visual__caption p {
+  max-width: 34rem;
+  margin: 0;
+  color: rgb(255 255 255 / 90%);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.login-form-column {
+  justify-self: center;
+}
+
+.login-form-column > div > .login-card-enter,
+.register-page .login-form-column > div > div {
+  border-color: #d9d3c5;
+  border-radius: 0.85rem;
+  box-shadow: 0 10px 30px rgb(23 26 23 / 8%);
+}
+
+.civic-landing-hero {
+  overflow: hidden;
+  background: #f7f4ea;
+}
+
+.civic-landing-layout {
+  display: grid;
+  width: min(100%, 82rem);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+  align-items: center;
+  gap: clamp(1rem, 4vw, 4rem);
+}
+
+.civic-landing-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.civic-landing-actions {
+  justify-content: flex-start;
+}
+
+.civic-landing-art-wrap {
+  overflow: hidden;
+  border: 1px solid #d9d3c5;
+  background: #e6efe8;
+  box-shadow: 0 10px 28px rgb(23 26 23 / 8%);
+}
+
+.civic-landing-art {
+  display: block;
+  width: 100%;
+  height: clamp(18rem, 34vw, 29rem);
+  object-fit: cover;
+  object-position: center 46%;
+}
+
+.civic-home-page > section {
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 9px rgb(23 26 23 / 4%);
+}
+
+.admin-shell aside {
+  border-right: 1px solid rgb(255 255 255 / 12%);
+}
+
+@media (max-width: 900px) {
+  .login-layout {
+    max-width: 42rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .login-visual {
+    min-height: 15rem;
+    order: 0;
+  }
+
+  .login-visual__caption {
+    gap: 0.35rem;
+    padding: 1.25rem;
+  }
+
+  .login-visual__caption strong {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+
+  .login-form-column {
+    width: 100%;
+    max-width: 34rem;
+  }
+
+  .civic-landing-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .civic-landing-copy {
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .civic-landing-art-wrap {
+    width: 100%;
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .civic-landing-art {
+    height: clamp(15rem, 42vw, 23rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .login-main {
+    padding: 1rem;
+  }
+
+  .login-visual {
+    min-height: 12rem;
+  }
+
+  .login-visual__caption p {
+    font-size: 0.8rem;
+  }
+
+  .login-form-column > div > .login-card-enter,
+  .register-page .login-form-column > div > div {
+    border-radius: 0.65rem;
+  }
+
+  .civic-landing-copy h1 {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .civic-landing-actions {
+    align-items: stretch;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

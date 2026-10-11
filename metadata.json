@@ -1,0 +1,6 @@
+{
+  "name": "NagarSetu – Smart Urban Operations",
+  "description": "Comprehensive municipal civic operating system connecting citizens, field operations crews, and city command with real-time grievance triage, automated spatial dispatch, and statutory Sakala SLA enforcement.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
